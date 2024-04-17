@@ -11,11 +11,11 @@ if "%~1"=="run" (
     echo.
 ) else if "%~1"=="run_userperms" (
     set "mode=1"
-    title "Valthrunner's Script v!script_version! (with user perms for controller)"
+    title "Innocent v!script_version! (with user perms for controller)"
     echo.
 ) else if "%~1"=="run_radar" (
     set "mode=2"
-    title "Valthrunner's Script v!script_version! Radar Version obsolete ;)"
+    title "Innocent v!script_version! Radar Version obsolete ;)"
     mode 95, 40
     echo.
 ) else (
@@ -82,7 +82,7 @@ if not exist "vulkan-1.dll" call :copyVulkanDLL
 tasklist /FI "IMAGENAME eq cs2.exe" 2>NUL | find /I /N "cs2.exe">NUL
 if "%ERRORLEVEL%"=="0" (
     echo.
-    echo   CS2 is running. Valthrun will load.
+    echo   CS2 is running. Innocent will load.
     echo.
 ) else (
     echo.
@@ -98,7 +98,7 @@ if "%ERRORLEVEL%"=="0" (
     )
     ping -n 20 localhost >nul
     echo.
-    echo   Valthrun will now load.
+    echo   Innocent will now load.
     echo.
 )
 
