@@ -6,27 +6,6 @@ set "script_version=3.1"
 title "Innocent cs2 privat v!script_version!"
 set "mode=0"
 
-:: Set mode based on arguments
-if "%~1"=="run" (
-    echo.
-) else if "%~1"=="run_userperms" (
-    set "mode=1"
-    title "Innocent v!script_version! (with user perms for controller)"
-    echo.
-) else if "%~1"=="run_radar" (
-    set "mode=2"
-    title "Innocent v!script_version! Radar Version obsolete ;)"
-    mode 95, 40
-    echo.
-) else (
-    mode 85, 30
-    echo   Please use run.bat.
-    echo   Downloading run.bat...
-    curl -s -L -o "run.bat" "https://github.com/valthrunner/Valthrun/releases/latest/download/run.bat"
-    call run.bat
-    exit
-)
-
 :: Display ASCII art header
 echo.
 call :displayHeader
