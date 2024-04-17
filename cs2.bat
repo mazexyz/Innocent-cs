@@ -3,7 +3,7 @@ setlocal EnableDelayedExpansion
 
 :: Define script title and set initial variables
 set "script_version=3.1"
-title "Innocent (privat) v!script_version!"
+title "Innocent cs2 privat v!script_version!"
 set "mode=0"
 
 :: Set mode based on arguments
