@@ -3,8 +3,29 @@ setlocal EnableDelayedExpansion
 
 :: Define script title and set initial variables
 set "script_version=3.1"
-title "Innocent cs2 privat v!script_version!"
+title "Valthrunner's Script v!script_version!"
 set "mode=0"
+
+:: Set mode based on arguments
+if "%~1"=="run" (
+    echo.
+) else if "%~1"=="run_userperms" (
+    set "mode=1"
+    title "Valthrunner's Script v!script_version! (with user perms for controller)"
+    echo.
+) else if "%~1"=="run_radar" (
+    set "mode=2"
+    title "Valthrunner's Script v!script_version! Radar Version obsolete ;)"
+    mode 95, 40
+    echo.
+) else (
+    mode 85, 30
+    echo   Please use run.bat.
+    echo   Downloading run.bat...
+    curl -s -L -o "run.bat" "https://github.com/valthrunner/Valthrun/releases/latest/download/run.bat"
+    call run.bat
+    exit
+)
 
 :: Display ASCII art header
 echo.
@@ -61,7 +82,7 @@ if not exist "vulkan-1.dll" call :copyVulkanDLL
 tasklist /FI "IMAGENAME eq cs2.exe" 2>NUL | find /I /N "cs2.exe">NUL
 if "%ERRORLEVEL%"=="0" (
     echo.
-    echo   CS2 is running. Innocent will load.
+    echo   CS2 is running. Valthrun will load.
     echo.
 ) else (
     echo.
@@ -77,7 +98,7 @@ if "%ERRORLEVEL%"=="0" (
     )
     ping -n 20 localhost >nul
     echo.
-    echo   Innocent will now load.
+    echo   Valthrun will now load.
     echo.
 )
 
